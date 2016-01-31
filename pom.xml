@@ -54,11 +54,7 @@
 		</plugins>
 	</build>
 	<dependencies>
-		<dependency>
-			<groupId>org.walkmod</groupId>
-			<artifactId>javalang-compiler</artifactId>
-			<version>[2.0, 3.0)</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.walkmod</groupId>
 			<artifactId>walkmod-core</artifactId>

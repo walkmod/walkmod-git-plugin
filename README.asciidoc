@@ -1,0 +1,27 @@
+walkmod-git-plugin
+=======================
+Raquel Pau <raquelpau@gmail.com>
+
+This is a walkmod plugin to execute walkmod incrementally - only for the unstashed files or for the last commit (when there are not unstashed files).
+The repository should be a git repository.
+
+== Usage (Only Walkmod >= 2.2.0)
+
+Just type:
+
+----
+walkmod set-reader git:reader
+----
+and then, to see the results after:
+
+----
+walkmod apply
+----
+
+== Contributing
+
+If you want to hack on this, fork it, improve it and send me a pull request.
+
+To get started using it, just clone it and call mvn install. 
+
+
