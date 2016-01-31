@@ -7,15 +7,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.walkmod.Resource;
 
-
 public class GitFileReaderTest {
 
    @Test
-   public void test() throws Exception {
+   public void testUnstashed() throws Exception {
       GitFileReader reader = new GitFileReader();
       reader.setPath("src/main/java");
       File tempFile = new File("src/main/java/hello.txt");
-      if(tempFile.exists()){
+      if (tempFile.exists()) {
          tempFile.delete();
       }
       if (tempFile.createNewFile()) {
@@ -23,7 +22,7 @@ public class GitFileReaderTest {
             Resource<File> files = reader.read();
             Iterator<File> it = files.iterator();
             boolean contains = false;
-            while(it.hasNext() && !contains){
+            while (it.hasNext() && !contains) {
                File current = it.next();
                contains = current.getName().equals("hello.txt");
             }
@@ -32,5 +31,21 @@ public class GitFileReaderTest {
             tempFile.delete();
          }
       }
+   }
+
+   @Test
+   public void testLastCommit() throws Exception {
+      GitFileReader reader = new GitFileReader();
+      reader.setPath("src/main/java");
+
+      Resource<File> files = reader.read();
+      Iterator<File> it = files.iterator();
+      boolean contains = false;
+      while (it.hasNext() && !contains) {
+         File current = it.next();
+         contains = current.getName().contains("GitFileReader");
+      }
+      Assert.assertTrue(contains);
+
    }
 }
