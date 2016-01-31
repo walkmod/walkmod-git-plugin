@@ -3,7 +3,7 @@ walkmod-git-plugin
 Raquel Pau <raquelpau@gmail.com>
 
 This is a walkmod plugin to execute walkmod incrementally - only for the unstashed files or for the last commit (when there are not unstashed files).
-The repository should be a git repository.
+The repository needs to be a git repository.
 
 == Usage (Only Walkmod >= 2.2.0)
 
