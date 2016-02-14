@@ -16,6 +16,9 @@ public class JavaConstraintsProviderTest {
    public void test() throws Exception {
       JavaConstraintProvider jcp = new JavaConstraintProvider();
       File file = new File("src/test/resources/Foo.java");
+      if(file.exists()){
+         file.delete();
+      }
       file.createNewFile();
       FileUtils.write(file, "public class Foo {}");
       CompilationUnit cu = ASTManager.parse(file);
