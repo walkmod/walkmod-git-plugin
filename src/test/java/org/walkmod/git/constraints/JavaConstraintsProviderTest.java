@@ -14,19 +14,23 @@ public class JavaConstraintsProviderTest {
 
    @Test
    public void test() throws Exception {
-      JavaConstraintProvider jcp = new JavaConstraintProvider();
+
       File dir = new File("src/test/resources");
       dir.mkdirs();
       File file = new File("src/test/resources/Foo.java");
-      if(file.exists()){
+      if (file.exists()) {
          file.delete();
       }
-      file.createNewFile();
-      FileUtils.write(file, "public class Foo {}");
-      CompilationUnit cu = ASTManager.parse(file);
-      Constraint<?> c = jcp.getConstraint(cu);
-      Assert.assertTrue(c instanceof NodesPerLineConstraint);
+      try {
+         file.createNewFile();
+         FileUtils.write(file, "public class Foo {}");
+         JavaConstraintProvider jcp = new JavaConstraintProvider();
+         CompilationUnit cu = ASTManager.parse(file);
+         Constraint<?> c = jcp.getConstraint(cu);
 
-      file.delete();
+         Assert.assertTrue(c instanceof NodesPerLineConstraint);
+      } finally {
+         file.delete();
+      }
    }
 }
