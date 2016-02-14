@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.walkmod</groupId>
 	<artifactId>walkmod-git-plugin</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<url>https://github.com/walkmod/walkmod-pmd-plugin</url>
 	<licenses>
 		<license>
@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>org.walkmod</groupId>
 			<artifactId>walkmod-core</artifactId>
-			<version>[1.0.0,2.0.0)</version>
+			<version>[2.0.0,3.0.0)</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -71,6 +71,11 @@
 			<artifactId>org.eclipse.jgit</artifactId>
 			<version>4.2.0.201601211800-r</version>
 		</dependency>
+		<dependency>
+            <groupId>org.walkmod</groupId>
+            <artifactId>javalang</artifactId>
+            <version>[3.1.0, 5.0.0)</version>
+        </dependency>
 	</dependencies>
 	<profiles>
 		<profile>

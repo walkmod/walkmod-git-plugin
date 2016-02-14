@@ -3,5 +3,10 @@
    "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="org.walkmod:walkmod-comments-git-plugin:reader" class="org.walkmod.git.readers.GitFileReader"></bean>
+	<bean id="org.walkmod:walkmod-git-plugin:reader" class="org.walkmod.git.readers.GitFileReader"></bean>
+
+	<bean id="org.walkmod:walkmod-git-plugin:git-diff-provider" class="org.walkmod.git.providers.GitDiffConfigurationProvider"></bean>
+
+	<bean id="org.walkmod:walkmod-git-plugin:java-constraint-provider"
+		class="org.walkmod.git.constraints.JavaConstraintProvider"></bean>
 </beans>

@@ -1,5 +1,5 @@
 /* 
-  Copyright (C) 2015 Raquel Pau.
+  Copyright (C) 2016 Raquel Pau.
  
  Walkmod is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
@@ -69,6 +69,7 @@ public class GitFileReader extends DefaultFileReader {
                   }
                }
 
+              
             } else {
 
                Set<String> filesInCommit = getFilesInHEAD(git.getRepository());
