@@ -15,6 +15,8 @@ public class JavaConstraintsProviderTest {
    @Test
    public void test() throws Exception {
       JavaConstraintProvider jcp = new JavaConstraintProvider();
+      File dir = new File("src/test/resources");
+      dir.mkdirs();
       File file = new File("src/test/resources/Foo.java");
       if(file.exists()){
          file.delete();
